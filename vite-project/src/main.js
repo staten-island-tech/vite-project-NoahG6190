@@ -1,24 +1,29 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import "./style.css";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const song = [
+  { title: "Song 1", artist: "Artist A", cover: "cover1.jpg" },
+  { title: "Song 2", artist: "Artist B", cover: "cover2.jpg" },
+  { title: "Song 3", artist: "Artist C", cover: "cover3.jpg" },
+  { title: "Song 4", artist: "Artist D", cover: "cover4.jpg" },
+];
 
-setupCounter(document.querySelector('#counter'))
+const playlistContainer = document.getElementById("playlist-container");
+const songContainer = document.getElementById("song-container");
+let playlist = [];
+
+function injectsongs(song) {
+  song.forEach((song) => {
+    songContainer.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <div class="song-card">
+        <img src="${song.cover}" alt="${song.title}" />
+        <h2>${song.title}</h2>
+        <p>${song.artist}</p>
+        <button class="add-to-playlist-btn">Add to Playlist</button>
+      </div>
+    `
+    );
+  });
+}
+songs.forEach((song) => injectsongs(song));
