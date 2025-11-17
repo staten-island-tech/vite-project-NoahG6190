@@ -5,6 +5,12 @@ const song = [
   { title: "Song 2", artist: "Artist B", cover: "cover2.jpg" },
   { title: "Song 3", artist: "Artist C", cover: "cover3.jpg" },
   { title: "Song 4", artist: "Artist D", cover: "cover4.jpg" },
+  { title: "Song 5", artist: "Artist E", cover: "cover5.jpg" },
+  { title: "Song 6", artist: "Artist F", cover: "cover6.jpg" },
+  { title: "Song 7", artist: "Artist G", cover: "cover7.jpg" },
+  { title: "Song 8", artist: "Artist H", cover: "cover8.jpg" },
+  { title: "Song 9", artist: "Artist I", cover: "cover9.jpg" },
+  { title: "Song 10", artist: "Artist J", cover: "cover10.jpg" },
 ];
 
 const playlistContainer = document.getElementById("playlist-container");
@@ -14,7 +20,7 @@ let playlist = [];
 function injectsongs(song) {
   song.forEach((song) => {
     songContainer.insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       `
       <div class="song-card">
         <img src="${song.cover}" alt="${song.title}" />
@@ -26,4 +32,16 @@ function injectsongs(song) {
     );
   });
 }
-songs.forEach((song) => injectsongs(song));
+injectsongs(song);
+function addtoPlaylist(song) {
+  document.addEventListener("click", (song) => {
+    if (song.target.classList.contains("add-to-playlist-btn")) {
+      const card = song.target.closest(".song-card");
+      const title = card.querySelector("h2").textContent;
+      const artist = card.querySelector("p").textContent;
+      const cover = card.querySelector("img").src;
+      playlist.push({ title, artist, cover });
+    }
+  });
+}
+addtoPlaylist(song);
