@@ -33,15 +33,15 @@ function injectsongs(song) {
   });
 }
 injectsongs(song);
-function addtoPlaylist(song) {
-  document.addEventListener("click", (song) => {
-    if (song.target.classList.contains("add-to-playlist-btn")) {
-      const card = song.target.closest(".song-card");
-      const title = card.querySelector("h2").textContent;
-      const artist = card.querySelector("p").textContent;
-      const cover = card.querySelector("img").src;
-      playlist.push({ title, artist, cover });
-    }
-  });
-}
-addtoPlaylist(song);
+
+songContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("add-to-playlist-btn")) {
+    const card = e.target.closest(".song-card");
+    const title = card.querySelector("h2").textContent;
+    const artist = card.querySelector("p").textContent;
+    const cover = card.querySelector("img").src;
+
+    playlist.push({ title, artist, cover });
+    console.log("Added to playlist:", playlist);
+  }
+});
