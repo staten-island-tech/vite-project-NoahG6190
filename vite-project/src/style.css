@@ -139,3 +139,7 @@ button:focus-visible {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.back-to-songs-btn {
+  display: none;
+}

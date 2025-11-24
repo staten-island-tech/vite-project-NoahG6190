@@ -15,6 +15,23 @@ const song = [
 
 const playlistContainer = document.getElementById("playlist-container");
 const songContainer = document.getElementById("song-container");
+const goToPlaylistBtn = document.getElementById("go-to-playlist-btn");
+const backToSongsBtn = document.getElementById("back-to-songs-btn");
+
+backToSongsBtn.addEventListener("click", () => {
+  playlistContainer.style.display = "none";
+  songContainer.style.display = "block";
+  goToPlaylistBtn.style.display = "block";
+  backToSongsBtn.style.display = "none";
+});
+goToPlaylistBtn.addEventListener("click", () => {
+  renderPlaylist();
+  songContainer.style.display = "none";
+  playlistContainer.style.display = "block";
+  backToSongsBtn.style.display = "block";
+  goToPlaylistBtn.style.display = "none";
+});
+
 let playlist = [];
 
 function injectSongs(songs) {
@@ -22,14 +39,13 @@ function injectSongs(songs) {
     songContainer.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="song-card">
-        <img src="${track.cover}" alt="${track.title}" />
-        <h2>${track.title}</h2>
-        <p>${track.artist}</p>
-        <button class="add-to-playlist-btn">Add to Playlist</button>
-        <button class="remove-from-playlist-btn">Remove from Playlist</button>
-      </div>
-    `
+        <div class="song-card">
+          <img src="${track.cover}" alt="${track.title}" />
+          <h2>${track.title}</h2>
+          <p>${track.artist}</p>
+          <button class="add-to-playlist-btn">Add</button>
+        </div>
+      `
     );
   });
 }
@@ -44,10 +60,8 @@ songContainer.addEventListener("click", (e) => {
     const cover = card.querySelector("img").src;
 
     playlist.push({ title, artist, cover });
-    console.log("Added to playlist:", playlist);
   }
 });
-renderPlaylist();
 
 function renderPlaylist() {
   playlistContainer.innerHTML = "";
@@ -56,45 +70,23 @@ function renderPlaylist() {
     playlistContainer.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="playlist-item">
-        <img src="${track.cover}" />
-        <h3>${track.title}</h3>
-        <p>${track.artist}</p>
-      </div>
+        <div class="playlist-item">
+          <img src="${track.cover}" />
+          <h3>${track.title}</h3>
+          <p>${track.artist}</p>
+          <button class="remove-from-playlist-btn">Remove</button>
+        </div>
       `
     );
   });
 }
-const goToPlaylistBtn = document.getElementById("go-to-playlist-btn");
 
-goToPlaylistBtn.addEventListener("click", () => {
-  renderPlaylist();
-  songContainer.style.display = "none";
-  playlistContainer.style.display = "block";
+playlistContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("remove-from-playlist-btn")) {
+    const item = e.target.closest(".playlist-item");
+    const title = item.querySelector("h3").textContent;
+
+    playlist = playlist.filter((track) => track.title !== title);
+    renderPlaylist();
+  }
 });
-
-removePlaylistBtn.addEventListener("click", () => {
-  playlist = [];
-  renderPlaylist();
-});
-
-const removePlaylistBtn = document.getElementById("remove-from-playlist-btn");
-
-function removeSongs(songs) {
-  songs.forEach((track) => {
-    songContainer.insertAdjacentHTML(
-      "beforeend",
-      `
-      <div class="song-card">
-        <img src="${track.cover}" alt="${track.title}" />
-        <h2>${track.title}</h2>
-        <p>${track.artist}</p>
-        <button class="add-to-playlist-btn">Add to Playlist</button>
-        <button class="remove-from-playlist-btn">Remove from Playlist</button>
-      </div>
-    `
-    );
-  });
-}
-
-removeSongs(song);
