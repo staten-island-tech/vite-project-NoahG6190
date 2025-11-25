@@ -143,3 +143,7 @@ button:focus-visible {
 .back-to-songs-btn {
   display: none;
 }
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
