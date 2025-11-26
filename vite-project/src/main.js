@@ -1,9 +1,17 @@
 import "./style.css";
 
 const song = [
-  { title: "Lady of Namek", artist: "Tory Lanez", cover: "cover1.jpg" },
-  { title: "Girls Want Girls", artist: "Drake", cover: "cover2.jpg" },
-  { title: "Nothing Like Uuu", artist: "Nettspend", cover: "cover3.jpg" },
+  { title: "Lady of Namek", artist: "Tory Lanez", cover: "Lady of Namek.webp" },
+  {
+    title: "Girls Want Girls",
+    artist: "Drake",
+    cover: "Girls want Girls.webp",
+  },
+  {
+    title: "Nothing Like Uuu",
+    artist: "Nettspend",
+    cover: "Nothing Like Uuu. jpg",
+  },
   { title: "crush", artist: "2hollis", cover: "cover4.jpg" },
   { title: "ATTITUDE", artist: "Don Toliver", cover: "cover5.jpg" },
   { title: "Rather Lie", artist: "Playboi Carti", cover: "cover6.jpg" },
