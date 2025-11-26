@@ -12,16 +12,16 @@ const song = [
     artist: "Nettspend",
     cover: "Nothing Like Uuu. jpg",
   },
-  { title: "crush", artist: "2hollis", cover: "cover4.jpg" },
-  { title: "ATTITUDE", artist: "Don Toliver", cover: "cover5.jpg" },
-  { title: "Rather Lie", artist: "Playboi Carti", cover: "cover6.jpg" },
-  { title: "poison", artist: "jaydes", cover: "cover7.jpg" },
-  { title: "Snooze", artist: "SZA", cover: "cover8.jpg" },
-  { title: "yes", artist: "Ken Carson", cover: "cover9.jpg" },
+  { title: "crush", artist: "2hollis", cover: "crush.jpg" },
+  { title: "ATTITUDE", artist: "Don Toliver", cover: "ATTITUDE.webp" },
+  { title: "Rather Lie", artist: "Playboi Carti", cover: "Rather Lie.jpg" },
+  { title: "poison", artist: "jaydes", cover: "poison.webp" },
+  { title: "Snooze", artist: "SZA", cover: "snoooze.webp" },
+  { title: "yes", artist: "Ken Carson", cover: "yes.jpg" },
   {
     title: "Spin Bout U",
     artist: "Drake feat. 21 Savage",
-    cover: "cover10.jpg",
+    cover: "Spin Bout U.jpg",
   },
 ];
 
