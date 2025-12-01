@@ -29,6 +29,8 @@ const playlistContainer = document.getElementById("playlist-container");
 const songContainer = document.getElementById("song-container");
 const goToPlaylistBtn = document.getElementById("go-to-playlist-btn");
 const backToSongsBtn = document.getElementById("back-to-songs-btn");
+const searchInput = document.getElementById("search-input");
+searchInput.addEventListener("input", injectSongs);
 
 backToSongsBtn.addEventListener("click", () => {
   playlistContainer.style.display = "none";
@@ -46,8 +48,19 @@ goToPlaylistBtn.addEventListener("click", () => {
 
 let playlist = [];
 
-function injectSongs(songs) {
-  songs.forEach((track) => {
+function injectSongs() {
+  const songsFiltered = song.filter(
+    (a) =>
+      a.title
+        .toLowerCase()
+        .includes(
+          document.getElementById("search-input").value.toLowerCase()
+        ) ||
+      a.artist
+        .toLowerCase()
+        .includes(document.getElementById("search-input").value.toLowerCase())
+  );
+  songsFiltered.forEach((track) => {
     songContainer.insertAdjacentHTML(
       "beforeend",
       `
