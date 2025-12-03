@@ -23,6 +23,8 @@ const songs = [
     artist: "Drake feat. 21 Savage",
     cover: "Spin Bout U.jpg",
   },
+  { title: "Die For You", artist: "The Weeknd", cover: "Die For You.webp" },
+  { title: "Creepin'", artist: "Metro Boomin", cover: "Creepin'.webp" },
 ];
 
 const playlistContainer = document.getElementById("playlist-container");
@@ -117,11 +119,11 @@ backToSongsBtn.addEventListener("click", () => {
   backToSongsBtn.style.display = "none";
 });
 document.querySelector(".btn").addEventListener("click", function () {
-  if (document.body.classList.contains("cool")) {
-    document.body.classList.add("warm");
-    document.body.classList.remove("cool");
+  if (document.body.classList.contains("light-mode")) {
+    document.body.classList.add("dark-mode");
+    document.body.classList.remove("light-mode");
   } else {
-    document.body.classList.add("cool");
-    document.body.classList.remove("warm");
+    document.body.classList.add("light-mode");
+    document.body.classList.remove("dark-mode");
   }
 });

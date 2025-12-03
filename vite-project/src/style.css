@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--warm);
 }
 
 h1 {
@@ -43,8 +44,6 @@ h1 {
   text-align: center;
 }
 
-
-}
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -102,6 +101,7 @@ button:focus-visible {
   flex-wrap: wrap;
   align-content: space-evenly;
   margin-top: 20px;
+  color: var(--warm);
 }
 .song-card {
   width: 200px;
@@ -114,6 +114,7 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  color: var(--light-gray);
 }
 
 .song-card img {
