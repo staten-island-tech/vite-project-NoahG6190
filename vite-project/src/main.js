@@ -1,7 +1,7 @@
 import "./style.css";
 
 const songs = [
-  { title: "Lady of Namek", artist: "Tory Lanez", cover: "Lady of Namek.webp" },
+  { title: "Lady of Namek", artist: "Tory Lanez", cover: "Lady of Namek.jpg" },
   {
     title: "Girls Want Girls",
     artist: "Drake",
@@ -11,7 +11,7 @@ const songs = [
     title: "Nothing Like Uuu",
     artist: "Nettspend",
     cover: "Nothing Like Uuu.jpg",
-  }, // fixed spacing
+  },
   { title: "crush", artist: "2hollis", cover: "crush.jpg" },
   { title: "ATTITUDE", artist: "Don Toliver", cover: "ATTITUDE.webp" },
   { title: "Rather Lie", artist: "Playboi Carti", cover: "Rather Lie.jpg" },
@@ -23,8 +23,6 @@ const songs = [
     artist: "Drake feat. 21 Savage",
     cover: "Spin Bout U.jpg",
   },
-  { title: "Die For You", artist: "The Weeknd", cover: "Die For You.webp" },
-  { title: "Creepin'", artist: "Metro Boomin", cover: "Creepin'.webp" },
 ];
 
 const playlistContainer = document.getElementById("playlist-container");
@@ -118,12 +116,7 @@ backToSongsBtn.addEventListener("click", () => {
   goToPlaylistBtn.style.display = "block";
   backToSongsBtn.style.display = "none";
 });
-document.querySelector(".btn").addEventListener("click", function () {
-  if (document.body.classList.contains("light-mode")) {
-    document.body.classList.add("dark-mode");
-    document.body.classList.remove("light-mode");
-  } else {
-    document.body.classList.add("light-mode");
-    document.body.classList.remove("dark-mode");
-  }
+const toggleBtn = document.getElementById("theme-toggle-btn");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
 });
