@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vite-project</title>
   </head>
+  <>
+
   <h1>Noahify</h1>
   <button id="go-to-playlist-btn">Go to Playlist</button>
   <button id="back-to-songs-btn">Back to Songs</button>
   <button id="theme-toggle-btn">Toggle Theme</button>
   <input class="text" placeholder="Search Songs" id="search-input" />
+  <div id="playlist-cover-section" class="hidden">
+    <input
+      type="text"
+      id="playlist-cover-input"
+      placeholder="Enter playlist cover image URL"
+    />
+    <button id="set-cover-btn">Set Cover</button>
+
+    <div id="playlist-cover"></div>
+  </div>
   <body class="body">
     <div class="song-container" id="song-container"></div>
     <div class="playlist-container" id="playlist-container"></div>

@@ -47,13 +47,13 @@ function injectSongs() {
     songContainer.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="song-card">
-        <img src="${track.cover}" alt="${track.title}" />
-        <h2>${track.title}</h2>
-        <p>${track.artist}</p>
-        <button class="add-to-playlist-btn">Add</button>
-      </div>
-      `
+    <div class="song-card">
+      <img src="${track.cover}" alt="${track.title}" />
+      <h2>${track.title}</h2>
+      <p>${track.artist}</p>
+      <button class="add-to-playlist-btn">Add</button>
+    </div>
+  `
     );
   });
 }
@@ -81,13 +81,13 @@ function renderPlaylist() {
     playlistContainer.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="playlist-item">
-        <img src="${track.cover}" />
-        <h3>${track.title}</h3>
-        <p>${track.artist}</p>
-        <button class="remove-from-playlist-btn">Remove</button>
-      </div>
-      `
+    <div class="playlist-item">
+      <img src="${track.cover}" />
+      <h3>${track.title}</h3>
+      <p>${track.artist}</p>
+      <button class="remove-from-playlist-btn">Remove</button>
+    </div>
+  `
     );
   });
 }
@@ -102,19 +102,38 @@ playlistContainer.addEventListener("click", (e) => {
   renderPlaylist();
 });
 
+const coverSection = document.getElementById("playlist-cover-section");
+const coverInput = document.getElementById("playlist-cover-input");
+const setCoverBtn = document.getElementById("set-cover-btn");
+const coverDisplay = document.getElementById("playlist-cover");
+
+let playlistCoverUrl = ""; // save cover
+
+setCoverBtn.addEventListener("click", () => {
+  const url = coverInput.value.trim();
+  if (!url) return;
+
+  playlistCoverUrl = url;
+
+  coverDisplay.innerHTML = `
+    <img src="${playlistCoverUrl}" alt="Playlist Cover" />
+  `;
+});
 goToPlaylistBtn.addEventListener("click", () => {
   renderPlaylist();
-  songContainer.style.display = "none";
-  playlistContainer.style.display = "block";
-  goToPlaylistBtn.style.display = "none";
-  backToSongsBtn.style.display = "block";
+  songContainer.classList.add("hidden");
+  playlistContainer.classList.remove("hidden");
+  coverSection.classList.remove("hidden"); // show cover section
+  goToPlaylistBtn.classList.add("hidden");
+  backToSongsBtn.classList.remove("hidden");
 });
 
 backToSongsBtn.addEventListener("click", () => {
-  playlistContainer.style.display = "none";
-  songContainer.style.display = "block";
-  goToPlaylistBtn.style.display = "block";
-  backToSongsBtn.style.display = "none";
+  playlistContainer.classList.add("hidden");
+  songContainer.classList.remove("hidden");
+  coverSection.classList.add("hidden");
+  goToPlaylistBtn.classList.remove("hidden");
+  backToSongsBtn.classList.add("hidden");
 });
 const toggleBtn = document.getElementById("theme-toggle-btn");
 toggleBtn.addEventListener("click", () => {
