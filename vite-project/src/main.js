@@ -1,7 +1,7 @@
 import "./style.css";
 
 const songs = [
-  { title: "Lady of Namek", artist: "Tory Lanez", cover: "Lady of Namek.jpg" },
+  { title: "Lady of Namek", artist: "Tory Lanez", cover: "lady of namek.jpg" },
   {
     title: "Girls Want Girls",
     artist: "Drake",
@@ -14,14 +14,36 @@ const songs = [
   },
   { title: "crush", artist: "2hollis", cover: "crush.jpg" },
   { title: "ATTITUDE", artist: "Don Toliver", cover: "ATTITUDE.webp" },
-  { title: "Rather Lie", artist: "Playboi Carti", cover: "Rather Lie.jpg" },
+  { title: "Rather Lie", artist: "Playboi Carti", cover: "i am music.png" },
   { title: "poison", artist: "jaydes", cover: "poison.webp" },
   { title: "Snooze", artist: "SZA", cover: "snoooze.webp" },
   { title: "yes", artist: "Ken Carson", cover: "yes.jpg" },
   {
     title: "Spin Bout U",
     artist: "Drake feat. 21 Savage",
-    cover: "Spin Bout U.jpg",
+    cover: "spin bout you.jpg",
+  },
+  { title: "Die For You", artist: "The Weeknd", cover: "die for you.jpg" },
+  { title: "jeans", artist: "2hollis", cover: "jeans.webp" },
+  {
+    title: "Whole Lotta Red",
+    artist: "Playboi Carti",
+    cover: "whole lotta red.jpg",
+  },
+  {
+    title: "overseas",
+    artist: "Ken Carson",
+    cover: "overseas.webp",
+  },
+  {
+    title: "White Ferrari",
+    artist: "Frank Ocean",
+    cover: "channel orange.webp",
+  },
+  {
+    title: "convenience",
+    artist: "jaydes",
+    cover: "convience.jpg",
   },
 ];
 
@@ -107,7 +129,7 @@ const coverInput = document.getElementById("playlist-cover-input");
 const setCoverBtn = document.getElementById("set-cover-btn");
 const coverDisplay = document.getElementById("playlist-cover");
 
-let playlistCoverUrl = ""; // save cover
+let playlistCoverUrl = "";
 
 setCoverBtn.addEventListener("click", () => {
   const url = coverInput.value.trim();
@@ -123,7 +145,7 @@ goToPlaylistBtn.addEventListener("click", () => {
   renderPlaylist();
   songContainer.classList.add("hidden");
   playlistContainer.classList.remove("hidden");
-  coverSection.classList.remove("hidden"); // show cover section
+  coverSection.classList.remove("hidden");
   goToPlaylistBtn.classList.add("hidden");
   backToSongsBtn.classList.remove("hidden");
 });
