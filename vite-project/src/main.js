@@ -1,30 +1,30 @@
 import "./style.css";
 
 const songs = [
-  { title: "Lady of Namek", artist: "Tory Lanez", cover: "lady of namek.jpg" },
+  { title: "Lady of Namek", artist: "Tory Lanez", cover: "/lady of namek.jpg" },
   {
     title: "Girls Want Girls",
     artist: "Drake",
-    cover: "Girls want Girls.webp",
+    cover: "/Girls want Girls.webp",
   },
   {
     title: "Nothing Like Uuu",
     artist: "Nettspend",
     cover: "Nothing Like Uuu.jpg",
   },
-  { title: "crush", artist: "2hollis", cover: "crush.jpg" },
-  { title: "ATTITUDE", artist: "Don Toliver", cover: "ATTITUDE.webp" },
-  { title: "Rather Lie", artist: "Playboi Carti", cover: "i am music.png" },
-  { title: "poison", artist: "jaydes", cover: "poison.webp" },
-  { title: "Snooze", artist: "SZA", cover: "snoooze.webp" },
-  { title: "yes", artist: "Ken Carson", cover: "yes.jpg" },
+  { title: "crush", artist: "2hollis", cover: "/crush.jpg" },
+  { title: "ATTITUDE", artist: "Don Toliver", cover: "/ATTITUDE.webp" },
+  { title: "Rather Lie", artist: "Playboi Carti", cover: "/i am music.png" },
+  { title: "poison", artist: "jaydes", cover: "/poison.webp" },
+  { title: "Snooze", artist: "SZA", cover: "/snoooze.webp" },
+  { title: "yes", artist: "Ken Carson", cover: "/yes.jpg" },
   {
     title: "Spin Bout U",
     artist: "Drake feat. 21 Savage",
-    cover: "spin bout you.jpg",
+    cover: "/spin bout you.jpg",
   },
-  { title: "Die For You", artist: "The Weeknd", cover: "die for you.jpg" },
-  { title: "jeans", artist: "2hollis", cover: "jeans.webp" },
+  { title: "Die For You", artist: "The Weeknd", cover: "/die for you.jpg" },
+  { title: "jeans", artist: "2hollis", cover: "/jeans.webp" },
   {
     title: "Whole Lotta Red",
     artist: "Playboi Carti",
@@ -33,17 +33,17 @@ const songs = [
   {
     title: "overseas",
     artist: "Ken Carson",
-    cover: "overseas.webp",
+    cover: "/overseas.webp",
   },
   {
     title: "White Ferrari",
     artist: "Frank Ocean",
-    cover: "channel orange.webp",
+    cover: "/channel orange.webp",
   },
   {
     title: "convenience",
     artist: "jaydes",
-    cover: "convience.jpg",
+    cover: "/convience.jpg",
   },
 ];
 
