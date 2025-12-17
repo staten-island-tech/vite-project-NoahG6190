@@ -28,7 +28,7 @@ const songs = [
   {
     title: "Whole Lotta Red",
     artist: "Playboi Carti",
-    cover: "whole lotta red.jpg",
+    cover: "/whole lotta red.jpg",
   },
   {
     title: "overseas",
